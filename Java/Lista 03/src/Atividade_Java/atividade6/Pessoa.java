@@ -21,8 +21,12 @@ public class Pessoa {
 		private String nome = "Pedro Henrique Pinheiro Rodrigues";
 		private int anoNascimento = 2001;
 		private int anoAtual = 2022;
-		private	int dia = 22;
-		private	int mes = 11;
+		
+		
+		private int diaAnivessario =13;
+		private	int dia = 13;
+		private String mesAtual ="nov";
+		private	boolean mes = false;
 	
 		private String cpf;
 		private Double peso;
@@ -48,14 +52,29 @@ public class Pessoa {
 			return anoAtual;
 		}
 		public int getAnoNascimento() {
-			int idade = anoAtual - anoNascimento;
+			int idade = 0;
+			if (getMes() == false) {
+				idade = anoAtual - anoNascimento -1;
+			}else {
+				idade = anoAtual - anoNascimento;
+			}
 			return idade;
 		}
 		public int getDia() {
 			return dia;
 		}
-		public int getMes() {
-			return mes;
+		public boolean getMes() {
+			if (this.diaAnivessario < this.dia) {
+				System.out.println("seu aniversario ja passou");
+				return true;
+			}else if(this.diaAnivessario > this.dia) {
+				System.out.println("seu aniversario está chegando");
+				return false;
+			}else {
+				System.out.println("seu aniversario é hojee!!");
+				return true;
+			}
+			
 		}
 		
 	//  Set
@@ -71,9 +90,7 @@ public class Pessoa {
 		public void setDia(int dia) {
 			this.dia = dia;
 		}
-		public void setMes(int mes) {
-			this.mes = mes;
-		}
+		
 	//  Metodos
 		public void informaNome() {
 			System.out.println("Nome :"+this.nome);

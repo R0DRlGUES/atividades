@@ -8,6 +8,8 @@ public class idade {
 		Pessoa p = new Pessoa();
 		p.informaNome();
 		p.informaIdade();
+		
+		
 
 	}
 
